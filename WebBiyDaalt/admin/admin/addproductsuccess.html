@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Added Successfully</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .success-box {
+            background: #ffffff;
+            padding: 40px 50px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: fade 0.4s ease;
+        }
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            font-size: 26px;
+            color: #111;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 25px;
+        }
+        .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Товч хоорондын зай */
+    align-items: center;
+}
+
+.btn {
+    width: 220px; /* Адил хэмжээтэй болгох */
+    padding: 12px 0;
+    border: 1.5px solid black;
+    color: black;
+    background: transparent;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: black;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="success-box">
+        <h1>🎉 Product Successfully Added!</h1>
+        <p>Your product has been added to the store.</p>
+
+        <div class="btn-group">
+    <a href="addproduct.html" class="btn">Add Another Product</a>
+    <a href="productcategory.html" class="btn">Go to product category</a>
+</div>
+
+</body>
+</html>
