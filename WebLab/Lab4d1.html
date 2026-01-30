@@ -1,0 +1,178 @@
+<html>
+<head>
+  <title>Лабораторийн ажил 4</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    header, footer {
+      background-color: #D6EAF8;
+      padding: 10px;
+      text-align: center;
+    }
+    section {
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 10px;
+    }
+	
+    .section1 { background-color: #FADBD8; }  
+    .section2 { background-color: #D5F5E3; }  
+    .section3 { background-color: #FCF3CF; }  
+    .section4 { background-color: #E8DAEF; }  
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .box {
+      width: 45%;
+      margin: 10px 0;
+    }
+
+    .footer-box {
+      width: 100%;
+    }
+  </style>
+  <script>
+   window.onload = function () {
+  const c = document.getElementById("myCanvas");
+  const ctx = c.getContext("2d");
+
+  ctx.fillStyle = "#87CEEB";
+  ctx.fillRect(0, 0, 400, 150);
+
+  ctx.beginPath();
+  ctx.arc(330, 40, 25, 0, Math.PI * 2);
+  ctx.fillStyle = "yellow";
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(320, 40, 25, 0, Math.PI * 2);
+  ctx.fillStyle = "#87CEEB";
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.moveTo(50, 150);
+  ctx.lineTo(150, 70);
+  ctx.lineTo(250, 150);
+  ctx.fillStyle = "#556B2F";
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.moveTo(200, 150);
+  ctx.lineTo(300, 90);
+  ctx.lineTo(380, 150);
+  ctx.fillStyle = "#6B8E23";
+  ctx.fill();
+
+  ctx.fillStyle = "green";
+  ctx.fillRect(0, 150, 400, 50);
+
+  function drawStar(ctx, x, y, r, color) {
+    ctx.beginPath();
+    ctx.fillStyle = color;
+
+    for (let i = 0; i < 5; i++) {
+      ctx.lineTo(
+        x + r * Math.cos((18 + i * 72) * Math.PI / 180),
+        y - r * Math.sin((18 + i * 72) * Math.PI / 180)
+      );
+      ctx.lineTo(
+        x + (r / 2) * Math.cos((54 + i * 72) * Math.PI / 180),
+        y - (r / 2) * Math.sin((54 + i * 72) * Math.PI / 180)
+      );
+    }
+    ctx.closePath();
+    ctx.fill();
+  }
+
+drawStar(ctx, 60, 40, 15, "white");
+drawStar(ctx, 120, 30, 12, "white");
+drawStar(ctx, 180, 45, 14, "white");
+drawStar(ctx, 240, 30, 12, "white");
+};
+  </script>
+
+</head>
+
+<body>
+
+  <header>
+    <h1>Лабораторийн ажил 4: Дуу, Видео, Canvas, SVG</h1>
+  </header>
+
+  <section class="section1">
+    <h2>Даалгавар 1: Дуу оруулах</h2>
+    <audio controls autoplay loop>
+      <source src="audio.mp4" type="audio/mpeg">
+      Таны браузер дуу тоглуулахыг дэмжихгүй байна.
+    </audio>
+  </section>
+
+
+  <div class="container">
+
+    <section class="section2 box">
+      <h2>Даалгавар 2: Видео оруулах</h2>
+      <video width="400" controls>
+        <source src="video.mp4" type="video/mp4">
+        Таны браузер видео тоглуулахыг дэмжихгүй байна.
+      </video>
+    </section>
+
+    <section class="section3 box">
+      <h2>Даалгавар 3: Canvas ашиглан зураг зурах</h2>
+      <canvas id="myCanvas" width="400" height="200" style="border:1px solid #000;"></canvas>
+    </section>
+
+  </div>
+
+  <section class="section4 footer-box">
+    <h2>Даалгавар 4: SVG ашиглан зураг зурах</h2>
+
+    <svg width="400" height="200">
+
+      <rect width="400" height="150" fill="#ADD8E6" />
+
+      <circle cx="80" cy="80" r="40" fill="orange" />
+
+      <ellipse cx="200" cy="70" rx="35" ry="20" fill="white" />
+      <ellipse cx="230" cy="70" rx="30" ry="18" fill="white" />
+      <ellipse cx="215" cy="55" rx="28" ry="18" fill="white" />
+
+      <ellipse cx="300" cy="60" rx="32" ry="18" fill="white" />
+      <ellipse cx="325" cy="65" rx="27" ry="15" fill="white" />
+      <ellipse cx="310" cy="50" rx="25" ry="15" fill="white" />
+
+      <rect y="150" width="400" height="50" fill="green" />
+
+      <rect x="120" y="120" width="160" height="40" fill="#3498DB" rx="8" />
+
+      <rect x="150" y="95" width="100" height="35" fill="#5DADE2" rx="8" />
+
+      <rect x="160" y="100" width="35" height="25" fill="white" rx="4" />
+      <rect x="205" y="100" width="35" height="25" fill="white" rx="4" />
+
+      <circle cx="155" cy="165" r="15" fill="black" />
+      <circle cx="155" cy="165" r="7" fill="gray" />
+
+      <circle cx="245" cy="165" r="15" fill="black" />
+      <circle cx="245" cy="165" r="7" fill="gray" />
+
+      <rect x="280" y="130" width="15" height="8" fill="yellow" rx="2" />
+
+    </svg>
+
+  </section>
+
+  <footer>
+    <p>© Веб Зохиомж - Лабораторийн ажил 4</p>
+  </footer>
+
+</body>
+</html>
