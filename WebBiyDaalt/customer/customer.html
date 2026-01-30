@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders-Tom Pigeon-Account</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+            color: #111;
+            line-height: 1.6;
+        }
+
+        .header{
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+        .part1{
+            display: flex;
+            align-items: center;
+            gap:5px;
+            margin-left: 67px;
+        }
+        .part1 h2{
+            font-family: "Inter", sans-serif;
+            font-size: 19px;
+            font-weight: 400;
+            color: #111;
+            margin-top: 7px;
+        }
+        .no_u{
+            text-decoration: none;
+        }
+        .saaral_button{
+            background-color: white;
+            color: #282828;
+            height: 41px;
+            width: 60px;
+            border: white ;
+            font-family: "Inter", sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 7px;
+            margin-top: 7px;
+        }
+        .saaral_button:hover{
+            background-color: rgb(243, 242, 242);
+        }
+        .saaral_button a {
+            text-decoration: none;
+            color:#282828;
+        }
+        .profile-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .profile-btn {
+            background: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .profile-btn .avatar {
+             width: 30px;
+            border-radius: 50%;
+        }
+        .profile-btn:hover{
+             background-color: #f5f5f5;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 260px;
+            background: white;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0px 4px 16px rgba(0,0,0,0.1);
+
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-4px);
+            transition: 0.15s ease;
+        }
+        .profile-wrapper:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .dropdown-header .avatar {
+            width: 36px;
+        }
+
+        .email {
+            font-size: 14px;
+            color: #7e7e7e;
+            font-size: 13px;
+        }
+
+        .item {
+            padding: 12px 0;
+            text-decoration: none;
+            color: black;
+            font-size: 13px;
+            font-family:"Inter", sans-serif ;
+            display: block;
+        }
+
+        .item:hover {
+            background: #f2f2f2;
+            padding-left: 8px;
+            border-radius: 6px;
+        }
+        .part2 {
+            margin-left: 820px;
+        }
+        .hr {
+            color:0.5px #7e7e7e ;
+        }
+        .bd{
+            background: #f5f5f5;
+            width: 100%;
+            padding-bottom: 30px;
+            min-height: calc(100vh - 135px);
+        }
+        .head_txt{
+            height: 94px;
+            display: flex;
+            align-items: center;
+        }
+        .bd h2 {
+            font-family: "Inter", sans-serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: #111;
+            margin-top: 7px;
+            margin-left: 67px;
+        }
+        .orders{
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            color: black;
+            width: 89%;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .gol{
+            display: flex;
+            justify-content: center;
+        }
+        .orders h5 {
+            font-family: "Inter", sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: #111;
+        }
+        .orders p {
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        .hr {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+
+        }
+        hr {
+            width: 89%;           
+            border: none;                 
+            border-top: 1px solid #c9c8c8; 
+            
+        }
+        .zai{
+            background-color:  #f5f5f5 ;
+            height: 65px;
+            display: flex;
+            align-items: center;
+        }
+        .zai h4{
+            font-family: "Inter" , sans-serif;
+            font-size: 15px;
+            font-weight: 200;
+            color: black;
+            margin-left: 70px;
+        }
+        .order-header {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 1fr;
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e5e5;
+            font-family: "Inter", sans-serif;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .order-item {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 1fr;
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e5e5;
+            align-items: center;
+        }
+        
+        .product-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            padding-left: 15px;
+        }
+        
+        .product-name {
+            font-family: "Inter", sans-serif;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .product-variant {
+            font-family: "Inter", sans-serif;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            background: none;
+            border: 1px solid #ddd;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .quantity {
+            font-family: "Inter", sans-serif;
+            font-weight: 500;
+        }
+        
+        .delete-btn {
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+        
+        .product-total {
+            font-family: "Inter", sans-serif;
+            font-weight: 500;
+        }
+        
+        .order-summary {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 0;
+            font-family: "Inter", sans-serif;
+        }
+        
+        .total-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 200px;
+        }
+        
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .total-label {
+            font-weight: 400;
+        }
+        
+        .total-amount {
+            font-weight: 500;
+        }
+        
+        .grand-total {
+            font-weight: 600;
+            font-size: 18px;
+            border-top: 1px solid #e5e5e5;
+            padding-top: 10px;
+        }
+
+        .newsletter {
+            background-color: #a8b6b8;
+            text-align: center;
+            padding: 47px 20px;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 10px;
+            font-size: 19px;
+            color: #fff;
+            font-weight: lighter;
+        }
+
+        .newsletter p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            opacity: 0.9;
+            color: rgba(255, 255, 255, 0.749);
+            font-weight: 10;
+        }
+
+        .newsletter form {
+            display: inline-flex;
+            border: 1px solid rgba(255, 255, 255, 0.749);
+            overflow: hidden;
+            background: transparent;
+            align-items: center;
+        }
+
+        .newsletter input[type="email"] {
+            padding: 14px 15px;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.749);
+            width: 250px;
+            outline: none;
+            height: 48px;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .newsletter input[type="email"]::placeholder {
+            color: rgba(255, 255, 255, 0.749);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .newsletter button {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.749);
+            font-size: 20px;
+            padding: 0 45px;
+            cursor: pointer;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .newsletter button:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 22px 20px; 
+            border-top: 1px solid #e5e5e5;
+            background: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 220px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px; 
+            margin: 8px; 
+        }
+
+        .footer-column h3 {
+            font-size: 15px;
+            font-weight: 540;
+            margin-bottom: 6px; 
+            color: #111;
+        }
+
+        .footer-column a,
+        .footer-column p {
+            font-size: 13px;
+            color: #646464;
+            text-decoration: none;
+            line-height: 1.6;
+            font-weight: 100;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 700px) {
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+            }
+        }
+
+        .copyright {
+            font-size: 11px;
+            color: #747373;
+            padding-top: 32px;
+            background: #fff;
+            border-top: 1px solid #ddd;
+            height: 103px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .copyright_txt {
+            margin-left: 81px;
+            letter-spacing: 0.3px;
+        }
+
+        .cpr_txt {
+            margin-left: 81px;
+            letter-spacing: 0.3px;
+        }
+    .profile-btn .fa-chevron-down {
+        font-size: 12px;
+        color: #555;
+        margin-left: 5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="part1">
+            <a href="main_page.html" class="no_u">
+                <h2 href="../customer/main_page.html">Tom Pigeon</h2>
+            </a>
+
+            <button class="saaral_button">
+                <a href="main_page.html" class="no_u1">Shop</a>
+            </button>
+
+            <button class="saaral_button">
+                <a href="customer.html" style="text-decoration: underline;">Orders</a>
+            </button>
+        </div>
+
+        <div class="part2">
+            <div class="profile-wrapper">
+                <button class="profile-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" class="avatar">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+               
+
+                <div class="dropdown">
+                    <div class="dropdown-header">
+                        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" class="avatar">
+                        <span class="email">nene@gmail.com</span>
+                    </div>
+
+                    <hr>
+
+                    <a href="profile.html" class="item">Profile</a>
+                    <a href="settings.html" class="item">Settings</a>
+                    <a href="#" class="item">Sign out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bd">
+        <div class="head_txt"><h2>Orders</h2></div>
+        <div class="gol">
+            <div class="orders">
+  
+                <div class="order-header">
+                    <div></div> 
+                    <div>PRODUCT</div>
+                    <div>QUANTITY</div>
+                    <div>TOTAL</div>
+                </div>
+                
+    
+                <div class="order-item">
+                    <div>
+                        <img src="pics/pin2_1.webp" 
+                             alt="Capsule Necklace Black" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Capsule Necklace Black</div>
+                    </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn">+</button>
+                        <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                    </div>
+                    <div class="product-total">265,000 MNT</div>
+                </div>
+                
+                <div class="order-item">
+                    <div>
+                        <img src="pics/pin3_2.jpg" 
+                             alt="Jetsam Pin Set" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Jetsam Pin Set</div>
+                    </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn">+</button>
+                        <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                    </div>
+                    <div class="product-total">289,000 MNT</div>
+                </div>
+                
+                <div class="order-item">
+                    <div>
+                        <img src="pics/pin4_2.jpg"
+                             alt="Beachcomber Shingle" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Beachcomber Shingle</div>
+                        <div class="product-variant">Dimensions: SMALL</div>
+                    </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn">+</button>
+                        <button class="delete-btn"><i class="fas fa-trash"></i></button>
+                    </div>
+                    <div class="product-total">241,000 MNT</div>
+                </div>
+                
+    
+                <div class="order-summary">
+                    <div class="total-section">
+                        <div class="total-row">
+                            <span class="total-label">Subtotal</span>
+                            <span class="total-amount">795,000 MNT</span>
+                        </div>
+                        <div class="total-row">
+                            <span class="total-label">Shipping</span>
+                            <span class="total-amount">0 MNT</span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span class="total-label">Total</span>
+                            <span class="total-amount">795,000 MNT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="newsletter">
+        <h2>Newsletter</h2>
+        <p>Join The Pigeon Club... get 10% off every order!</p>
+        <form>
+            <input type="email" placeholder="Email" required />
+            <button type="submit">&#8594;</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-column">
+            <h3>Information</h3>
+            <a href="information/about.html">About Us</a>
+            <a href="information/buying-guide.html">Buying Guide</a>
+            <a href="information/product-care.html">Product Care</a>
+            <a href="information/wholesale.html">Wholesale</a>
+            <a href="information/commissions.html">Commissions</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Follow</h3>
+            <a href="https://www.facebook.com/tompigeonstudio"><u>Facebook</u></a>
+            <a href="https://www.instagram.com/tom_pigeon/"><u>Instagram</u></a>
+            <a href="https://uk.pinterest.com/tompigeonstudio/"><u>Pinterest</u></a>
+            <a href="https://www.kirstytanner.com/"><u>Kirsty Tanner</u></a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <p>Do you have a question?<br>
+            Please don't hesitate to <a href="information/contact.html"><u>get in touch.</u></a></p>
+        </div>
+    </footer>
+    
+    <div class="copyright">
+        <span class=copyright_txt>
+            Copyright ©2024. All rights reserved.<br></span>
+        <span class=cpr_txt>Site by The Printer's Son</span>
+    </div>
+</body>
+</html>

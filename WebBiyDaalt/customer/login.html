@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOM PIGEON</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+            color: #111;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0 20px 40px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            margin-left: 90px;
+        }
+
+        .logo h1 {
+            font-size: 25px;
+            letter-spacing: 0.5px;
+            font-weight: 400;
+            text-align: center;
+            font-family: "Inter", sans-serif;
+        }
+
+        nav {
+            text-align: center;
+            margin: 10px 0 0 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #646464;
+            font-size: 15px;
+            font-weight: 300;
+            transition: color 0.3s;
+            font-family: "Inter", sans-serif;
+        }
+
+        nav a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .utility-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .btn i {
+            font-size: 1.1rem;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #f5f5f5;
+        }
+
+        .btn:hover i {
+            color: #000;
+        }
+
+        .btn-primary {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            color: #000;
+            padding: 0 1vw;
+            height: 5vh;
+            border-radius: 3vh;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-primary:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(60, 41, 41, 0.1);
+        }
+
+        .btn-primary b {
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+        }
+
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 5vw;
+            padding: 6vh 8vw;
+            flex-wrap: wrap;
+        }
+
+        .auth-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border-radius: 1rem;
+            padding: 4vh 3vw;
+            max-width: 480px;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .auth-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .auth-card h2 {
+            font-size: 17px;
+            color: black;
+            margin-bottom: 2vh;
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+        }
+
+        .auth-card label {
+            font-size: 1.8vh;
+            font-family: "Inter" , sans-serif;
+            font-weight: 600;
+            color: #4b5563;
+            display: block;
+            margin-top: 1.5vh;
+            margin-bottom: 0.5vh;
+        }
+
+        .auth-card label span {
+            color: red;
+        }
+
+        .auth-card input {
+            width: 100%;
+            padding: 1.2vh 1vw;
+            font-size: 1.7vh;
+            border: 1px solid #d1d5db;
+            border-radius: 0.8rem;
+            transition: border-color 0.3s ease;
+            background: #f3f4f6;
+        }
+
+        .auth-card input:focus {
+            border-color: #2563eb;
+            outline: none;
+            background: #fff;
+        }
+
+        .btn-auth {
+            margin-top: 3vh;
+            padding: 1.2vh 0;
+            width: 100%;
+            font-size: 1.9vh;
+            font-weight: 600;
+            font-family: "Inter" , sans-serif;
+            border: none;
+            border-radius: 0.8rem;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-auth.primary {
+            background: linear-gradient(90deg, #f97316, #facc15);
+            color: #fff;
+        }
+
+        .btn-auth.primary:hover {
+            background: linear-gradient(90deg, #fd791aaf, #fa9e15bb);
+        }
+
+        .btn-auth.secondary {
+            background: #f3f4f6;
+            color: #4b5563;
+        }
+
+        .btn-auth.secondary:hover {
+            background: #e5e7eb;
+        }
+
+        .newsletter {
+            background-color: #a8b6b8;
+            text-align: center;
+            padding: 47px 20px;
+            color: #fff;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 10px;
+            font-size: 19px;
+            font-weight: lighter;
+        }
+
+        .newsletter p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .newsletter form {
+            display: inline-flex;
+            border: 1px solid rgba(255, 255, 255, 0.749);
+            overflow: hidden;
+            background: transparent;
+            align-items: center;
+        }
+
+        .newsletter input[type="email"] {
+            padding: 14px 15px;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.749);
+            width: 250px;
+            outline: none;
+            height: 48px;
+            box-sizing: border-box;
+        }
+
+        .newsletter input[type="email"]::placeholder {
+            color: rgba(255, 255, 255, 0.749);
+        }
+
+        .newsletter button {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.749);
+            font-size: 20px;
+            padding: 0 45px;
+            cursor: pointer;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter button:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 22px 20px;
+            border-top: 1px solid #e5e5e5;
+            background: #fff;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 220px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin: 8px;
+        }
+
+        .footer-column h3 {
+            font-size: 15px;
+            font-weight: 540;
+            margin-bottom: 6px;
+            color: #111;
+        }
+
+        .footer-column a,
+        .footer-column p {
+            font-size: 13px;
+            color: #646464;
+            text-decoration: none;
+            line-height: 1.6;
+            font-weight: 100;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 11px;
+            color: #747373;
+            padding-top: 32px;
+            background: #fff;
+            border-top: 1px solid #ddd;
+            height: 103px;
+        }
+
+        @media (max-width: 700px) {
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+            }
+        }
+        .copyright {
+            font-size: 11px;
+            color: #747373;
+            padding-top: 32px;
+            background: #fff;
+            border-top: 1px solid #ddd;
+            height: 103px;
+        }
+
+        .copyright_txt {
+            margin-left: 81px;
+            letter-spacing: 0.3px;
+        }
+
+        .cpr_txt {
+            margin-left: 81px;
+            letter-spacing: 0.3px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="utility-buttons">
+            <button class="btn" id="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <div class="logo">
+            <a href="main_page.html"><a href="../customer/main_page.html"><h1>TOM PIGEON</h1></a></a>
+            <nav>
+               <a href="jewellery.html">Jewellery</a>
+                <a href="stationery.html">Stationery</a>
+                <a href="prints.html">Prints</a>
+                <a href="giftcards.html">Gift Cards</a>
+                <a href="collaborations.html">Collaborations</a>
+            </nav>
+        </div>
+
+        <div class="utility-buttons">
+           <a href="login.html" class="btn-primary"><b>Login</b></a>
+             <a href="cart.html">
+                <button class="btn" id="cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </a>
+            <a href="customer.html">
+                <button class="btn" id="user-btn">
+                    <i class="far fa-user"></i>
+                </button>
+            </a>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="auth-container">
+            <div class="auth-card register-card">
+                <h2>Sign In</h2>
+                <form>
+                    <label for="reg-email">Email<span>*</span></label>
+                    <input type="email" id="reg-email" name="email" required>
+
+                    <label for="reg-password">Password <span>*</span></label>
+                    <input type="password" id="reg-password" name="password" required>
+
+                    <button  class="btn-auth secondary">LOGIN</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <section class="newsletter">
+        <h2>Newsletter</h2>
+        <p>Join The Pigeon Club... get 10% off every order!</p>
+        <form>
+            <input type="email" placeholder="Email" required />
+            <button type="submit">&#8594;</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-column">
+            <h3>Information</h3>
+            <a href="information/about.html">About Us</a>
+            <a href="information/buying-guide.html">Buying Guide</a>
+            <a href="information/product-care.html">Product Care</a>
+            <a href="information/wholesale.html">Wholesale</a>
+            <a href="information/commissions.html">Commissions</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Follow</h3>
+            <a href="https://www.facebook.com/tompigeonstudio"><u>Facebook</u></a>
+            <a href="https://www.instagram.com/tom_pigeon/"><u>Instagram</u></a>
+            <a href="https://uk.pinterest.com/tompigeonstudio/"><u>Pinterest</u></a>
+            <a href="https://www.kirstytanner.com/"><u>Kirsty Tanner</u></a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <p>Do you have a question?<br>
+            Please don't hesitate to <a href="information/contact.html"><u>get in touch.</u></a></p>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <span class="copyright_txt">Copyright ©2024. All rights reserved.<br></span>
+        <span class="cpr_txt">Site by The Printer's Son</span>
+    </div>
+
+</body>
+</html>

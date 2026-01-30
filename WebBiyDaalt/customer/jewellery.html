@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOM PIGEON | Jewellery & Stationery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+            color: #111;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0 20px 40px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+
+        .logo {
+            margin-left: 100px;
+            text-align: center;
+        }
+
+        .logo h1 {
+            font-size: 25px;
+            letter-spacing: 0.5px;
+            font-weight: 400;
+            font-family: "Inter", sans-serif;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #646464;
+            font-size: 15px;
+            font-weight: 300;
+            text-decoration: none;
+            font-family: "Inter", sans-serif;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .utility-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .btn i {
+            font-size: 1.1rem;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #f5f5f5;
+        }
+
+        .btn:hover i {
+            color: #000;
+        }
+
+        .btn-primary {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--white);
+            color: var(--black);
+            padding: 0 1vw;
+            height: 5vh;
+            border-radius: 3vh;
+            text-decoration: none;
+            right: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                        0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-primary:hover {
+            background: var(--black);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2),
+                        0 3px 6px rgba(60, 41, 41, 0.1);
+        }
+
+        .btn-primary b {
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .logo {
+                margin-left: 0;
+            }
+
+            nav a {
+                margin: 0 10px;
+            }
+        }
+        .copyright {
+            font-size: 11px;
+            color: #747373;
+            padding-top: 32px;
+            background: #fff;
+            border-top: 1px solid #ddd;
+            height: 103px;
+        }
+        .copyright_txt{
+            margin-left: 81px;
+            letter-spacing: 0.3px;
+        }
+        .cpr_txt{
+            margin-left: 81px;
+            letter-spacing: 0.3px;
+        }
+         .newsletter {
+            background-color: #a8b6b8;
+            text-align: center;
+            padding: 47px 20px;
+            color: white;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 10px;
+            font-size: 19px;
+            color: #fff;
+            font-weight: lighter;
+        }
+
+        .newsletter p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            opacity: 0.9;
+            color:rgba(255, 255, 255, 0.749) ;
+            font-weight: 10;
+        }
+
+        .newsletter form {
+            display: inline-flex;
+            border: 1px solid rgba(255, 255, 255, 0.749);
+            overflow: hidden;
+            background: transparent;
+            align-items: center;
+        }
+
+        .newsletter input[type="email"] {
+            padding: 14px 15px;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.749);
+            width: 250px;
+            outline: none;
+            height: 48px;
+            box-sizing: border-box;
+        }
+
+        .newsletter input[type="email"]::placeholder {
+            color: rgba(255, 255, 255, 0.749);
+        }
+
+        .newsletter button {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.749);
+            font-size: 20px;
+            padding: 0 45px;
+            cursor: pointer;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter button:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 22px 20px; 
+            border-top: 1px solid #e5e5e5;
+            background: #fff;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 220px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px; 
+            margin: 8px; 
+        }
+
+        .footer-column h3 {
+            font-size: 15px;
+            font-weight: 540;
+            margin-bottom: 6px; 
+            color: #111;
+        }
+        .footer-column a,
+        .footer-column p {
+            font-size: 13px;
+            color: #646464;
+            text-decoration: none;
+            line-height: 1.6;
+            font-weight: 100;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+         }
+
+    
+        @media (max-width: 700px) {
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+             }
+        }
+        .collab{
+            display: flex;
+            background-color: #F2ECE5 ;
+            height: 83px;
+            align-items: center;
+            
+        }
+        .collab p {
+            margin-left: 20px ;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-weight: 600; 
+            font-size: 12px; 
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            padding-right: 20px;
+            border-right: 1px solid #2a2a2a; 
+        }
+        .collab_pic li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="utility-buttons">
+            <button class="btn" id="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        
+        <div class="logo">
+            <a href="main_page.html"><h1>TOM PIGEON</h1></a>
+            <nav>
+                <a href="jewellery.html">Jewellery</a>
+                <a href="stationery.html">Stationery</a>
+                <a href="prints.html">Prints</a>
+                <a href="giftcards.html">Gift Cards</a>
+                <a href="collaborations.html">Collaborations</a>
+            </nav>
+        </div>
+        
+        <div class="utility-buttons">
+            <a href="login.html" class="btn-primary"><b>Login</b></a>
+            <a href="cart.html">
+                <button class="btn" id="cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </a>
+            <a href="customer.html">
+                <button class="btn" id="user-btn">
+                    <i class="far fa-user"></i>
+                </button>
+            </a>
+        </div>
+    </header>
+
+    <!--Header heseg ene hesegtee oroldohgui-->
+    
+    <!-- Барааны хэсэг -->
+
+<section class="product-section">
+  <div class="product-grid">
+    <div class="section-header">
+    <h2>Jewellery</h2>
+    </div>
+    <!-- 1-р бараа -->
+    <a href="detail_1/jwP-1.html" class="product-card">
+      <img src="detail_1/jwP1.webp" alt="Tideline Earrings Cobalt" class="main-img">
+      <img src="detail_1/jwP1.1.webp" alt="Brass Seaweed Earrings Hover" class="hover-img">
+      <h3>Tideline Earrings Cobalt</h3>
+      <p>265,000 MNT</p>
+    </a>
+
+    <!-- 2-р бараа -->
+    <a href="detail_1/jwP-2.html" class="product-card">
+      <img src="detail_1/jwP2.jpg" alt="Tideline Earrings Black" class="main-img">
+      <img src="detail_1/jwP2.1.webp" alt="Silver Leaf Earrings Hover" class="hover-img">
+      <h3>Tideline Earrings Black</h3>
+      <p>265,000 MNT</p>
+    </a>
+
+    <!-- 3-р бараа -->
+    <a href="detail_1/jwP-3.html" class="product-card">
+      <img src="detail_1/jwP3.webp" alt="Golden Shell Earrings" class="main-img">
+      <img src="detail_1/jwP3.1.webp" alt="Golden Shell Earrings Hover" class="hover-img">
+      <h3>Tideline Necklace Cobalt</h3>
+      <p>265,000 MNT</p>
+    </a>
+
+    <!-- 4-р бараа -->
+    <a href="detail_1/jwP-4.html" class="product-card">
+      <img src="detail_1/jwP4.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP4.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Tideline Necklace</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 5-р бараа -->
+    <a href="detail_1/jwP-5.html" class="product-card">
+      <img src="detail_1/jwP5.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP5.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Tideline Set</h3>
+      <p>505,000 MNT</p>
+    </a>
+    <!-- 6-р бараа -->
+    <a href="detail_1/jwP-6.html" class="product-card">
+      <img src="detail_1/jwP6.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP6.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Hoop Drop Earrings Cobalt</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 7-р бараа -->
+    <a href="detail_1/jwP-7.html" class="product-card">
+      <img src="detail_1/jwP7.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP7.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Hoop Drop Earrings Black</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 8-р бараа -->
+    <a href="detail_1/jwP-8.html" class="product-card">
+      <img src="detail_1/jwP8.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP8.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Hoops Necklace Cobalt</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 9-р бараа -->
+    <a href="detail_1/jwP-9.html" class="product-card">
+      <img src="detail_1/jwP9.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP9.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Black Hoops Necklace</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 10-р бараа -->
+    <a href="detail_1/jwP-10.html" class="product-card">
+      <img src="detail_1/jwP10.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP10.1.jpg" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Hoop Set</h3>
+      <p>504,000 MNT</p>
+    </a>
+    <!-- 11-р бараа -->
+    <a href="detail_1/jwP-11.html" class="product-card">
+      <img src="detail_1/jwP11.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP11.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Rope Earrings Cobalt</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 12-р бараа -->
+    <a href="detail_1/jwP-12.html" class="product-card">
+      <img src="detail_1/jwP12.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP12.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Rope Earrings Black</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 13-р бараа -->
+    <a href="detail_1/jwP-13.html" class="product-card">
+      <img src="detail_1/jwP13.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP13.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Brass Rope Necklace</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 14-р бараа -->
+    <a href="detail_1/jwP-14.html" class="product-card">
+      <img src="detail_1/jwP14.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP14.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Fern Earrings Black</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 15-р бараа -->
+    <a href="detail_1/jwP-15.html" class="product-card">
+      <img src="detail_1/jwP15.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP15.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Flotsam Earrings Black</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 16-р бараа -->
+    <a href="detail_1/jwP-16.html" class="product-card">
+      <img src="detail_1/jwP16.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP16.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Flotsam Earrings Cobals</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 17-р бараа -->
+    <a href="detail_1/jwP-17.html" class="product-card">
+      <img src="detail_1/jwP17.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP17.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Brass Jetsam Earrings</h3>
+      <p>217,000 MNT</p>
+    </a>
+    <!-- 18-р бараа -->
+    <a href="detail_1/jwP-18.html" class="product-card">
+      <img src="detail_1/jwP18.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP18.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Silver Aluminium Adder Earrings</h3>
+      <p>217,000 MNT</p>
+    </a>
+    <!-- 19-р бараа -->
+    <a href="detail_1/jwP-19.html" class="product-card">
+      <img src="detail_1/jwP19.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP19.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Brass Adder Earrings</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 20-р бараа -->
+    <a href="detail_1/jwP-20.html" class="product-card">
+      <img src="detail_1/jwP20.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP20.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Adder Necklace Black</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 21-р бараа -->
+    <a href="detail_1/jwP-21.html" class="product-card">
+      <img src="detail_1/jwP21.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP21.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Capsule Drop Earrings Cobalt</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 22-р бараа -->
+    <a href="detail_1/jwP-22.html" class="product-card">
+      <img src="detail_1/jwP22.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP22.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Capsule Drop Earrings Black</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 23-р бараа -->
+    <a href="detail_1/jwP-23.html" class="product-card">
+      <img src="detail_1/jwP23.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP23.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Capsule Necklace Cobalt</h3>
+      <p>265,000 MNT</p>
+    </a>
+    <!-- 24-р бараа -->
+    <a href="detail_1/jwP-24.html" class="product-card">
+      <img src="detail_1/jwP24.webp" alt="Pearl Drop Earrings" class="main-img">
+      <img src="detail_1/jwP24.1.webp" alt="Pearl Drop Earrings Hover" class="hover-img">
+      <h3>Capsule Necklace Black</h3>
+      <p>265,000 MNT</p>
+    </a>
+  </div>
+   <div class="pagination"><!--Dood taliin toonuud-->
+    <a href="jewellery.html" class="active">1</a> <!---->
+    <a href="jewellery-page1.html">2</a>
+    <a href="jewellery-page2.html">3</a>
+    <a href="jewellery-page3.html">4</a>
+    <a href="jewellery-page1.html">&gt;</a> <!-- Дараагийн хуудас -->
+</div>
+</section>
+
+<!-- CSS -->
+<style>
+    /* "Jewellery" гарчиг */
+.section-header {
+  width: 100%;
+  max-width: 1200px;
+  text-align:left;
+  margin-bottom: 30px;
+  padding-left: 50px; /* эхний зурагтай тэнцэхийн тулд бага зэрэг зай */
+}
+
+.section-header h2 {
+  font-size: 20px;
+  font-weight: 540;
+  color: #333;
+  margin: 0;
+}
+.product-section {
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* төв рүү зэрэгцүүлнэ */
+  gap: 25px; /* бараа хоорондын зай */
+  max-width: 1200px; /* нэг мөрөнд 4 багана багтах */
+}
+
+.product-card {
+  width: 260px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none; /* доогуур зураас арилгана */
+  color: inherit; /* текстийн өнгийг хэвээр үлдээнэ */
+}
+
+.product-card img {
+  width: 100%;
+  transition: opacity 0.4s ease;
+}
+
+.product-card .hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.product-card:hover .hover-img {
+  opacity: 1;
+}
+
+.product-card h3 {  /* baraanii ner*/
+  font-size: 14px;
+  font-weight: 500; 
+  margin-top: 10px;
+  text-align: left;
+}
+
+.product-card p { /* une*/
+  font-size: 15px;
+  font-weight: 300;
+  text-align: left;
+}
+.product-section {
+  padding: 60px 0;
+  display: block;  
+  text-align: center;  
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;  /* grid-ийг төвд */
+}
+
+.pagination { /*Dood taliin toonuudiin style*/
+  display: inline-block;
+  margin-top: 40px;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 0 5px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #333;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+.pagination a:hover {
+  color: #fff;
+  background-color: #333;
+}
+.pagination a.active {
+  border-bottom: 2px solid #111; /* доор зураас */
+}
+
+
+
+</style>
+
+
+
+ 
+    
+    
+    
+   
+<!--footer ene hesegtei oroldohgui-->
+    
+<section class="newsletter">
+      <h2>Newsletter</h2>
+      <p>Join The Pigeon Club... get 10% off every order!</p>
+      <form>
+        <input type="email" placeholder="Email" required />
+        <button type="submit">&#8594;</button>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-column">
+        <h3>Information</h3>
+        <a href="information/about.html">About Us</a>
+        <a href="information/buying-guide.html">Buying Guide</a>
+        <a href="information/product-care.html">Product Care</a>
+        <a href="information/wholesale.html">Wholesale</a>
+        <a href="information/commissions.html">Commissions</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Follow</h3>
+        <a href="https://www.facebook.com/tompigeonstudio"><u>Facebook</u></a>
+        <a href="https://www.instagram.com/tom_pigeon"><u>Instagram</u></a>
+        <a href="https://uk.pinterest.com/tompigeonstudio/"><u>Pinterest</u></a>
+        <a href="https://www.kirstytanner.com/"><u>Kirsty Tanner</u></a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <p>
+          Do you have a question?<br />Please don't hesitate to
+          <a href="information/contact.html"><u>get in touch.</u></a>
+        </p>
+      </div>
+    </footer>
+
+    <div class="copyright">
+      <span class="copyright_txt"
+        >Copyright ©2024. All rights reserved.<br
+      /></span>
+      <span class="cpr_txt">Site by The Printer's Son</span>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOM PIGEON | Jewellery & Stationery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+            color: #111;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: sticky;
+        }
+
+        .logo h1 {
+            font-size: 25px;
+            letter-spacing: 1px;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center; 
+            margin: 10px 0 0 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #616161;
+            font-size: 15px;
+            font-weight: normal;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .utility-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .btn i {
+            font-size: 1.1rem;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #f5f5f5;
+        }
+
+        .btn:hover i {
+            color: #000;
+        }
+        .back {
+            background-image: url('brass_seaweed_set_5_banner.webp');
+            height: 550px; 
+            background-position: center;
+            background-size: cover; 
+            width: 90%; 
+            max-width: 1080px; 
+            margin-top: 0;
+            margin: 0 auto; 
+            position: relative; 
+            border-radius: 4px; 
+        }
+
+        .del {
+            position: absolute;
+            bottom: 200px;
+            right: 80px;
+            background-color: transparent;
+            color: black;
+            height: 45px;
+            width: 145px;
+            border: 1.5px solid black;
+            font-family: Roboto-Regular, sans-serif;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .del:hover {
+            background-color: transparent;
+            border-width: 2px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .copyright {
+            font-size: 11px;
+            color: #747373;
+            padding-top: 32px;
+            background: #fff;
+            border-top: 1px solid #ddd;
+            height: 103px;
+        }
+        .copyright_txt{
+            margin-left: 81px;
+            letter-spacing: 0.3px;
+        }
+        .cpr_txt{
+            margin-left: 81px;
+            letter-spacing: 0.3px;
+        }
+         .newsletter {
+            background-color: #a8b6b8;
+            text-align: center;
+            padding: 47px 20px;
+            color: white;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 10px;
+            font-size: 19px;
+            color: #fff;
+            font-weight: lighter;
+        }
+
+        .newsletter p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            opacity: 0.9;
+            color:rgba(255, 255, 255, 0.749) ;
+            font-weight: 10;
+        }
+
+        .newsletter form {
+            display: inline-flex;
+            border: 1px solid rgba(255, 255, 255, 0.749);
+            overflow: hidden;
+            background: transparent;
+            align-items: center;
+        }
+
+        .newsletter input[type="email"] {
+            padding: 14px 15px;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.749);
+            width: 250px;
+            outline: none;
+            height: 48px;
+            box-sizing: border-box;
+        }
+
+        .newsletter input[type="email"]::placeholder {
+            color: rgba(255, 255, 255, 0.749);
+        }
+
+        .newsletter button {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.749);
+            font-size: 20px;
+            padding: 0 45px;
+            cursor: pointer;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter button:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 22px 20px; 
+            border-top: 1px solid #e5e5e5;
+            background: #fff;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 220px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px; 
+            margin: 8px; 
+        }
+
+        .footer-column h3 {
+            font-size: 15px;
+            font-weight: 540;
+            margin-bottom: 6px; 
+            color: #111;
+        }
+        .footer-column a,
+        .footer-column p {
+            font-size: 13px;
+            color: #646464;
+            text-decoration: none;
+            line-height: 1.6;
+            font-weight: 100;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+         }
+
+    
+        @media (max-width: 700px) {
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+             }
+        }
+        .collab{
+            display: flex;
+            background-color: #F2ECE5 ;
+            height: 83px;
+            align-items: center;
+            
+        }
+        .collab p {
+            margin-left: 20px ;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-weight: 600; 
+            font-size: 12px; 
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            padding-right: 20px;
+            border-right: 1px solid #2a2a2a; 
+        }
+        .collab_pic li {
+            list-style: none;
+        }
+        .btn-primary {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--white);
+            color: var(--black);
+            padding: 0 1vw;
+            height: 5vh;
+            border-radius: 3vh;
+            text-decoration: none;
+            right: 5px;
+            transition: all 0.3s ease; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); 
+        }
+
+        .btn-primary:hover {
+            background: var(--black); 
+            color: var(--white); 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(60, 41, 41, 0.1); 
+        }
+        .btn-primary b {
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="utility-buttons">
+            <button class="btn" id="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        
+        <div class="logo">
+            <a href="main_page.html"><h1>TOM PIGEON</h1></a>
+            <nav>
+                <a href="jewellery.html">Jewellery</a>
+                <a href="stationery.html">Stationery</a>
+                <a href="prints.html">Prints</a>
+                <a href="giftcards.html">Gift Cards</a>
+                <a href="collaborations.html">Collaborations</a>
+            </nav>
+        </div>
+        
+        <div class="utility-buttons">
+            <a href="login.html" class="btn-primary"><b>Login</b></a>
+            <a href="cart.html">
+                <button class="btn" id="cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </a>
+            <a href="customer.html">
+                <button class="btn" id="user-btn">
+                    <i class="far fa-user"></i>
+                </button>
+            </a>
+        </div>
+    </header>
+
+    <!--Header heseg ene hesegtee oroldohgui-->
+    
+    <!-- Барааны хэсэг -->
+
+<section class="product-section">
+  <div class="product-grid">
+    <div class="section-header">
+    <h2> All Prints</h2>
+    </div>
+    <!-- 1-р бараа -->
+    <a href="information/prP1.html" class="product-card">
+      <img src="pics/prp1.1.webp" alt="Ribbon 1"  class="main-img">
+      <img src="pics/prp1.2.webp" alt="Ribbon 1"  class="hover-img">
+      <h3>Ribbon 1</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+
+    <!-- 2-р бараа -->
+    <a href="information/prP2.html" class="product-card">
+      <img src="pics/prp2.1.webp" alt="Ribbon 2" class="main-img">
+      <img src="pics/prp2.2.webp" alt="Ribbon 2 Hover" class="hover-img">
+      <h3>Ribbon 2</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+
+    <!-- 3-р бараа -->
+    <a href="information/prP3.html" class="product-card">
+      <img src="pics/prp3.1.webp" alt="Ribbon 3" class="main-img">
+      <img src="pics/prp3.2.webp" alt="Ribbon 3 Hover" class="hover-img">
+      <h3>Ribbon 3</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+
+    <!-- 4-р бараа -->
+    <a href="information/prP4.html" class="product-card">
+      <img src="pics/prp4.1.webp" alt="Dieter Beige" class="main-img">
+      <img src="pics/prp4.2.webp" alt="Dieter Beige Hover" class="hover-img">
+      <h3>Dieter Beige</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 5-р бараа -->
+    <a href="information/prP5.html" class="product-card">
+      <img src="pics/prp5.1.webp"  alt="Dieter Green" class="main-img">
+      <img src="pics/prp5.2.webp" alt="Dieter Green Hover" class="hover-img">
+      <h3>Dieter Green</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 6-р бараа -->
+    <a href="information/prP6.html" class="product-card">
+      <img src="pics/prp6.1.webp" alt="Dieter Navy" class="main-img">
+      <img src="pics/prp6.2.webp" alt="Dieter Navy Hover" class="hover-img">
+      <h3>Dieter Navy</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 7-р бараа -->
+    <a href="information/prP7.html" class="product-card">
+      <img src="pics/prp7.1.webp" alt="Wrack Cobalt" class="main-img">
+      <img src="pics/prp7.2.webp" alt="Wrack Cobalt Hover" class="hover-img">
+      <h3>Wrack Cobalt</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 8-р бараа -->
+    <a href="information/prP8.html" class="product-card">
+      <img src="pics/prp8.1.webp" alt="Wrack Charcoal" class="main-img">
+      <img src="pics/prp8.2.webp" alt="Wrack Charcoal Hover" class="hover-img">
+      <h3>Wrack Charcoal</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 9-р бараа -->
+    <a href="information/prP9.html" class="product-card">
+      <img src="pics/prp9.1.webp" alt="Grid 1" class="main-img">
+      <img src="pics/prp9.2.webp" alt="Grid 1 Hover" class="hover-img">
+      <h3>Grid 1</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 10-р бараа -->
+    <a href="information/prP10.html" class="product-card">
+      <img src="pics/prp10.1.webp" alt="Grid 2" class="main-img">
+      <img src="pics/prp10.2.webp" alt="Grid 2 Hover" class="hover-img">
+      <h3>Grid 2</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 11-р бараа -->
+    <a href="information/prP11.html" class="product-card">
+      <img src="pics/prp11.1.webp" alt="Beachcomber Shingle" class="main-img">
+      <img src="pics/prp11.2.webp" alt="Beachcomber Shingle Hover" class="hover-img">
+      <h3>Beachcomber Shingle</h3>
+      <p>From 241,000 MNT</p>
+    </a>
+    <!-- 12-р бараа -->
+    <a href="information/prP12.html" class="product-card">
+      <img src="pics/prp12.1.webp" alt="Beachcomber Clay" class="main-img">
+      <img src="pics/prp12.2.webp" alt="Beachcomber Clay Hover" class="hover-img">
+      <h3>Beachcomber Clay</h3>
+      <p>From 241,000 MNT</p>
+    </a>
+    <!-- 13-р бараа -->
+    <a href="information/prP13.html" class="product-card">
+      <img src="pics/prp13.1.webp" alt="Beachcomber Kelp" class="main-img">
+      <img src="pics/prp13.2.webp" alt="Beachcomber Kelp Hover" class="hover-img">
+      <h3>Beachcomber Kelp</h3>
+      <p>From 241,000 MNT</p>
+    </a>
+    <!-- 14-р бараа -->
+    <a href="information/prP14.html" class="product-card">
+      <img src="pics/prp14.1.webp" alt="Beachcomber Mono" class="main-img">
+      <img src="pics/prp14.2.webp" alt="Beachcomber Mono Hover" class="hover-img">
+      <h3>Beachcomber Mono</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 15-р бараа -->
+    <a href="information/prP15.html" class="product-card">
+      <img src="pics/prp15.1.webp" alt="Section 1" class="main-img">
+      <img src="pics/prp15.2.webp" alt="Section1 Hover" class="hover-img">
+      <h3>Section 1</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 16-р бараа -->
+    <a href="information/prP16.html" class="product-card">
+      <img src="pics/prp16.1.webp" alt="Section 2" class="main-img">
+      <img src="pics/prp16.2.webp" alt="Section 2 Hover" class="hover-img">
+      <h3>Section 2</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 17-р бараа -->
+    <a href="information/prP17.html" class="product-card">
+      <img src="pics/prp17.1.webp" alt="Section 3" class="main-img">
+      <img src="pics/prp17.2.webp" alt="Section 3Hover" class="hover-img">
+      <h3>Section 3</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 18-р бараа -->
+    <a href="information/prP18.html" class="product-card">
+      <img src="pics/prp18.1.webp" alt="Paper Cut Blue" class="main-img">
+      <img src="pics/prp18.2.webp" alt="Paper Cut Blue Hover" class="hover-img">
+      <h3>Paper Cut Blue</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 19-р бараа -->
+    <a href="information/prP19.html" class="product-card">
+      <img src="pics/prp19.1.webp" alt="Paper Cut Yellow" class="main-img">
+      <img src="pics/prp19.2.webp" alt="Paper Cut Yellow Hover" class="hover-img">
+      <h3>Paper Cut Yellow</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 20-р бараа -->
+    <a href="information/prP20.html" class="product-card">
+      <img src="pics/prp20.1.webp" alt="Paper Cut Green" class="main-img">
+      <img src="pics/prp20.2.webp" alt="Paper Cut Green Hover" class="hover-img">
+      <h3>Paper Cut Green</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 21-р бараа -->
+    <a href="information/prP21.html" class="product-card">
+      <img src="pics/prp21.1.webp" alt="Subway 1" class="main-img">
+      <img src="pics/prp21.2.webp" alt="Subway 1 Hover" class="hover-img">
+      <h3>Subway 1</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 22-р бараа -->
+    <a href="information/prP22.html" class="product-card">
+      <img src="pics/prp22.1.webp" alt="Subway 2" class="main-img">
+      <img src="pics/prp22.2.webp" alt="Subway 2 Hover" class="hover-img">
+      <h3>Subway 2</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 23-р бараа -->
+    <a href="information/prP23.html" class="product-card">
+      <img src="pics/prp23.1.webp" alt="Stack 002" class="main-img">
+      <img src="pics/prp23.2.webp" alt="Stack 002 Hover" class="hover-img">
+      <h3>Stack 002</h3>
+      <p>From 193,000 MNT</p>
+    </a>
+    <!-- 24-р бараа -->
+    <a href="information/prP24.html" class="product-card">
+      <img src="pics/prp24.1.webp" alt="Sticks Blue" class="main-img">
+      <img src="pics/prp24.2.webp" alt="Sticks Blue Hover" class="hover-img">
+      <h3>Sticks Blue</h3>
+      <p>From 241,000 MNT</p>
+    </a>
+  </div>
+   <div class="pagination"><!--Dood taliin toonuud-->
+    <a href="prints.html" class="active">1</a> <!---->
+    <a href="print-page2.html">2</a>
+    <a href="print-page3.html">3</a>
+    <a href="print-page2.html">&gt;</a> <!-- Дараагийн хуудас -->
+</div>
+</section>
+
+<!-- CSS -->
+<style>
+    /* "Jewellery" гарчиг */
+.section-header {
+  width: 100%;
+  max-width: 1200px;
+  text-align:left;
+  margin-bottom: 30px;
+  padding-left: 50px; /* эхний зурагтай тэнцэхийн тулд бага зэрэг зай */
+}
+
+.section-header h2 {
+  font-size: 20px;
+  font-weight: 540;
+  color: #333;
+  margin: 0;
+}
+.product-section {
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* төв рүү зэрэгцүүлнэ */
+  gap: 25px; /* бараа хоорондын зай */
+  max-width: 1200px; /* нэг мөрөнд 4 багана багтах */
+}
+
+.product-card {
+  width: 260px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none; /* доогуур зураас арилгана */
+  color: inherit; /* текстийн өнгийг хэвээр үлдээнэ */
+}
+
+.product-card img {
+  width: 100%;
+  transition: opacity 0.4s ease;
+}
+
+.product-card .hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.product-card:hover .hover-img {
+  opacity: 1;
+}
+
+.product-card h3 {  /* baraanii ner*/
+  font-size: 14px;
+  font-weight: 500; 
+  margin-top: 10px;
+  text-align: left;
+}
+
+.product-card p { /* une*/
+  font-size: 15px;
+  font-weight: 300;
+  text-align: left;
+}
+.product-section {
+  padding: 60px 0;
+  display: block;  
+  text-align: center;  
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;  /* grid-ийг төвд */
+}
+
+.pagination { /*Dood taliin toonuudiin style*/
+  display: inline-block;
+  margin-top: 40px;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 0 5px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #333;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+.pagination a:hover {
+  color: #fff;
+  background-color: #333;
+}
+.pagination a.active {
+  border-bottom: 2px solid #111; /* доор зураас */
+}
+
+
+
+</style>
+
+
+
+ 
+    
+    
+    
+   
+<!--footer ene hesegtei oroldohgui-->
+    
+<section class="newsletter">
+        <h2>Newsletter</h2>
+        <p>Join The Pigeon Club... get 10% off every order!</p>
+        <form>
+            <input type="email" placeholder="Email" required />
+            <button type="submit">&#8594;</button>
+        </form>
+    </section>
+    <footer>
+    <div class="footer-column">
+      <h3>Information</h3>
+      <a href="#">About Us</a>
+      <a href="#">Buying Guide</a>
+      <a href="#">Product Care</a>
+      <a href="#">Wholesale</a>
+      <a href="#">Commissions</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Follow</h3>
+      <a href="#"><u>Facebook</u></a>
+      <a href="#"><u>Instagram</u></a>
+      <a href="#"><u>Pinterest</u></a>
+      <a href="#"><u>Kirsty Tanner</u></a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <p>Do you have a question?<br>
+      Please don't hesitate to <a href="#"><u>get in touch.</u></a></p>
+    </div>
+  </footer>
+    <div class="copyright">
+        <span class=copyright_txt>
+            Copyright ©2024. All rights reserved.<br></span>
+        <span class=cpr_txt>Site by The Printer's Son</span>
+    </div>
+    
+</body>
+</html>
